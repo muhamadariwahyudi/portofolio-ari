@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio MAW</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo MAW">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Halo, Saya Muhamad Ari Wahyudi</h1>
+                <p>Seorang Programmer | IT Support | Graphic Design | Administration </p>
+                <a href="#portfolio" class="btn">Lihat Portofolio Saya</a>
+            </div>
+            <div class="hero-image">
+                <img src="foto.jpg" alt="Foto Profil MAW">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section fade-in">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <p>Perkenalkan Saya Muhamad Ari Wahyudi, Lulusan D3 Teknik Informatika dari Politeknik Negeri Banjarmasin dengan predikat IPK 3,72 Cumlaude dan pengalaman komprehensif di bidang pengembangan perangkat lunak, administrasi jaringan, serta dukungan teknis.
+                Memiliki sertifikasi BNSP sebagai Teknisi Komputer Muda dan pengalaman memimpin organisasi mahasiswa, menunjukkan kemampuan adaptasi, pemecahan masalah, dan kerja tim yang kuat. 
+                Bersemangat untuk mengaplikasikan keahlian teknis dan interpersonal dalam lingkungan kerja yang dinamis untuk berkontribusi pada kesuksesan organisasi.</p>
+            <p>Berikut Merupakan Pengalaman Magang dan Kerja Saya:</p>
+                <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Vue.js (Contoh)</li>
+                <li>Node.js, Python, PHP (Contoh)</li>
+                <li>Basis Data: MySQL, PostgreSQL, MongoDB (Contoh)</li>
+            </ul>
+            <p>Saya sangat antusias dengan teknologi baru dan selalu mencari tantangan untuk meningkatkan keterampilan saya.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section fade-in">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Proyek 1</h3>
+                    <p>Deskripsi singkat proyek ini. Menggunakan teknologi X, Y, Z.</p>
+                    <a href="#" target="_blank">Lihat Proyek</a>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Proyek 2</h3>
+                    <p>Deskripsi singkat proyek ini. Menggunakan teknologi A, B, C.</p>
+                    <a href="#" target="_blank">Lihat Proyek</a>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Proyek 3</h3>
+                    <p>Deskripsi singkat proyek ini. Menggunakan teknologi D, E, F.</p>
+                    <a href="#" target="_blank">Lihat Proyek</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section fade-in">
+        <div class="container">
+            <h2>Kontak Saya</h2>
+            <p>Tertarik untuk bekerja sama? Hubungi saya!</p>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Kirim Pesan</button>
+            </form>
+            <div class="contact-info">
+                <p>Email: <a href="https://mail.google.com">muhamadariwahyudi656@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/muhamad-ari-wahyudi" target="_blank">https://www.linkedin.com/in/muhamad-ari-wahyudi</a></p>
+                <p>GitHub: <a href="https://github.com/muhamadariwahyudi" target="_blank">https://github.com/muhamadariwahyudi</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MAW. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+
+            // Mengamati saat elemen masuk ke viewport untuk menampilkan animasi
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Smooth scroll untuk navigasi
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
